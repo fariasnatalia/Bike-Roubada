@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React, { useState }  from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { TextInput, TouchableOpacity } from 'react-native-web';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity  } from 'react-native';
+
 
 export default function App() {
   const [username, setUsername] = useState('')
@@ -12,7 +12,7 @@ export default function App() {
     const data  = {
       username,
       email,
-      password
+      password,
     }
     console.log(data);
 
@@ -42,7 +42,7 @@ export default function App() {
         onChangeText={setPassword}
         value={password}
         placeholder="Digite sua senha"
-        secureTextEntry={True}
+       secureTextEntry={true}
       />    
 
       <TouchableOpacity style={styles.button} onPress={handleSignIn}> 
