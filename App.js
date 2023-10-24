@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions  } from 'react-native';
 
+import Header from './Header'; // Importe o componente Header
+
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -30,8 +32,10 @@ export default function App() {
     
   
   return (
-    <View style={styles.container}>
 
+    <View style={styles.container}>
+      <Header /> 
+      
       <Text style={styles.title}>Olá seja Bem-Vindo(a)!</Text>
       
         <Text style={[styles.description, { fontSize: descriptionFontSize }]}>
@@ -107,11 +111,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     backgroundColor: '#f1eef0', // Cor de fundo
     alignItems: 'center',
-    justifyContent: 'center',
-  },//cor da tela 
+   
+  },
 
   title: {
     fontSize: 24,
@@ -119,6 +123,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: '#061325', // Cor do texto
   },//cor do título
+
 
   description: {
     color: '#061325',
@@ -146,9 +151,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   labelError:{
-    alignSelf: 'flex-Start',
+    alignItems: 'center',
     color: '#ff375b',
     marginBottom: '8',
   }
+  
 
 });
