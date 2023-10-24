@@ -1,3 +1,18 @@
+Instalando biblioteca de animações, facilita a criação de animações simples.
+
+``` npm install react-native-animatable ``` 
+
+Instalando React hook form
+
+``` yarn add react-hook-form ```
+ou 
+
+``` npmw add react-hook-form ```
+
+Instalando yuu para esquema validation 
+
+```npm install @hookform/resolvers yup```
+
 Instalando o NativeBase :
 
 ``` npm install native-base```
@@ -23,6 +38,3 @@ Rodando o projeto no navegador:
 
 ```npx expo start```
 
-BUGS: 
-- [] - footer
--  [] - header
