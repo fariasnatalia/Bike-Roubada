@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "18": "^0.0.0",
     "@hookform/resolvers": "^3.3.2",
     "expo": "^49.0.16",
     "expo-status-bar": "~1.6.0",
