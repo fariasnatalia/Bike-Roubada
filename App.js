@@ -2,8 +2,8 @@ import React, { useState }  from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions  } from 'react-native';
 
 
-import Header from './src/components/Header/Header'; // Importe o componente Header
-import Footer  from './src/components/Footer/Footer';
+// import Header from './src/components/Header/Header'; // Importe o componente Header
+// import Footer  from './src/components/Footer/Footer';
 
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -39,13 +39,11 @@ export default function App() {
 
       
     <View style={styles.container}>
-      <Header /> {/* importando components */}
+     {/* importando components */}
       
-      <Text style={styles.title}>Olá seja Bem-Vindo(a)!</Text>
+      <Text>Olá seja Bem-Vindo(a)!</Text>
       
-      <Text style={[styles.description, { fontSize: 16, color: '#061325', fontWeight: 'serif' }]}>
-          🚲 Para o seu primeiro acesso à plataforma, é necessário criarmos primeiro o seu cadastro!
-      </Text>
+      
       
       <Controller
          control={control}
@@ -64,7 +62,7 @@ export default function App() {
             /> 
          )}// quando o erro for (true) ele vai renderizar essa mensagem!
         />
-      {errors.username && <Text style={styles.labelError}>{errors.username?.message}</Text>} 
+      
 
       <Controller
          control={control}
@@ -83,7 +81,7 @@ export default function App() {
             /> 
          )}
       />  
-      {errors.email && <Text style={styles.labelError}>{errors.email?.message}</Text>} 
+      
 
 
        <Controller
@@ -104,15 +102,11 @@ export default function App() {
             /> 
          )}
       />  
-      {errors.password && <Text style={styles.labelError}>{errors.password?.message}</Text>}   
-
+      
 
       {/* Cadastro da bicicleta*/}
       
-      <Text style={[styles.description, { fontSize: 16, fontWeight: 'normal' }]}>
-        Agora precisamos de algumas informações sobre a bicicleta para continuarmos!
-        </Text>
-
+      
       <Controller
          control={control}
          name="model"
@@ -130,15 +124,14 @@ export default function App() {
             /> 
          )}
       />  
-    {errors.model && <Text style={styles.labelError}>{errors.model?.message}</Text>}   {/* mensagem de erro */}
-
+   
     
       <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignIn)}
 > 
-        <Text style={styles.buttonText}>Cadastrar</Text>
+        <Text>Cadastrar</Text>
       </TouchableOpacity>
        {/* importando components */}{/*importando o Footer*/}
-      <Footer />
+    
     </View>
   
   
