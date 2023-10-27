@@ -11,7 +11,7 @@ const Footer  = () => {
 
   const styles = StyleSheet.create({
     footer: {
-      backgroundColor: '#17a469', // Cor de fundo do cabeçalho
+      backgroundColor: '#059669', // Cor de fundo do cabeçalho
       width: '100%', //largura
       height: 60, //altura
       alignItems: 'center',

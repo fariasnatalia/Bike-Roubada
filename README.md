@@ -2,6 +2,10 @@ Instalando biblioteca de animações, facilita a criação de animações simple
 
 ``` npm install react-native-animatable ``` 
 
+Instalando biblioteca de (select)
+
+``` npm install react-native-picker-select ```
+
 Instalando React hook form
 
 ``` yarn add react-hook-form ```

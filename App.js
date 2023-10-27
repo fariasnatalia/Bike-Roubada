@@ -1,32 +1,35 @@
 import React from 'react';
+import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar, Image } from 'react-native';
 
 
-import Footer from './src/components/Footer/Footer';
+  
 
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
+import Footer from './src/components/Footer/Footer';
 
 
 
 const schema = yup.object({
   username: yup.string().required("Informe seu nome!"),
   email: yup.string().email("Email Inválido!").required("Informe um email válido!"),
-  telefone: yup.string().min(12, "A senha deve conter pelo menos 6 dígitos!").required("Informe sua senha!"), // Adicionando validação para a senha
+  phone: yup.string()
+    .matches(/^\d{4}[-\s]?\d{4}$/, "Formato inválido para número de telefone")
+    .required("Informe um número válido!"),// Adicionando validação para a senha
   model: yup.string().required("Informe o Modelo/Marca da Bicicleta * "),
 })
 
 
 
-
 export default function App() {
+  const [preference, setPreference] = useState(true); //Select
+  
   const { control, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema) //esquema de validação 
   })
-
-
 
   function handleSignIn(data) { //trago os valores dem forma de objeto para as UserStats
     console.log(data); // e exibo no console
@@ -41,14 +44,14 @@ export default function App() {
         source={require('./assets/image-bike.jpeg')} //imagem
         style={styles.image}
       />
-
+      
       <Controller
         control={control}
         name="username"
         render={({ field: { onChange, onBlur, value } }) => (
           <>
            
-            <Text style={styles.textLabel}>Nome: *</Text>
+            <Text style={styles.textLabel}>*  Nome:</Text>
             <TextInput
               style={[
                 styles.input, {
@@ -61,8 +64,10 @@ export default function App() {
               value={value}
               placeholder="*  Nome e Sobrenome:" />
           </>
-        )}// quando o erro for (true) ele vai renderizar essa mensagem!
+        )}
+        // quando o erro for (true) ele vai renderizar essa mensagem!
       />
+      {errors.username && <Text style={styles.labelError}>{errors.username.message}</Text>}
 
       <Controller
         control={control}
@@ -84,10 +89,11 @@ export default function App() {
       </>
         )}
       />
-
+      {errors.email && <Text style={styles.labelError}>{errors.email.message}</Text>}
+      
       <Controller
         control={control}
-        name="telefone"
+        name="phone"
         render={({ field: { onChange, onBlur, value } }) => (
       <>
         
@@ -95,8 +101,8 @@ export default function App() {
         <TextInput
             style={[
               styles.input, {
-                borderWidth: errors.telefone && 2,
-                borderColor: errors.telefone && '#ff375b'
+                borderWidth: errors.phone && 2,
+                borderColor: errors.phone && '#ff375b'
               }
             ]}
             onChangeText={onChange}
@@ -106,6 +112,7 @@ export default function App() {
         </>
         )}
       />
+      {errors.phone && <Text style={styles.labelError}>{errors.phone.message}</Text>}
 
       {/* Cadastro da bicicleta*/}
 
@@ -130,6 +137,8 @@ export default function App() {
           </>
         )}
       />
+       {errors.model &&<Text style={styles.labelError}>{errors.model.message}</Text>}     
+                        
 
       <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignIn)}
       >
@@ -160,7 +169,7 @@ const styles = StyleSheet.create({
   },
 
   button: { //Botão
-    backgroundColor: '#17a469', // Cor do botão
+    backgroundColor: '#10b981', // Cor do botão
     width: '50%', //largura
     height: 40, //altura
     alignItems: 'center',
