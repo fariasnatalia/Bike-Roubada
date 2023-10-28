@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar, Image } from 'react-native';
 
 
-  
+
 
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -26,7 +26,7 @@ const schema = yup.object({
 
 export default function App() {
   const [preference, setPreference] = useState(true); //Select
-  
+
   const { control, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema) //esquema de validação 
   })
@@ -38,23 +38,23 @@ export default function App() {
   return (
 
     <View style={styles.container}>
-      <Header title="Bike Roubada" /> 
-      
-      <Text>Olá seja Bem-Vindo(a)!</Text>
-      
+      <Header title="Bike Roubada" />
+
+    
+      <Text style={styles.welcomeText}>Olá seja Bem-Vindo(a)!</Text>
+
       <Image
         source={require('./assets/image-bike.jpeg')} //imagem
-        style={styles.image}
-      />
-       
-          {/* Conteúdo da sua aplicação */}
-        
+        style={styles.image} />
+
+      {/* Conteúdo da sua aplicação */}
+
       <Controller
         control={control}
         name="username"
         render={({ field: { onChange, onBlur, value } }) => (
           <>
-           
+
             <Text style={styles.textLabel}>*  Nome:</Text>
             <TextInput
               style={[
@@ -69,7 +69,7 @@ export default function App() {
               placeholder="*  Nome e Sobrenome:" />
           </>
         )}
-        // quando o erro for (true) ele vai renderizar essa mensagem!
+      // quando o erro for (true) ele vai renderizar essa mensagem!
       />
       {errors.username && <Text style={styles.labelError}>{errors.username.message}</Text>}
 
@@ -77,43 +77,43 @@ export default function App() {
         control={control}
         name="email"
         render={({ field: { onChange, onBlur, value } }) => (
-      <>  
-        <Text style={styles.textLabel}>*  Email: </Text>
-          <TextInput
-            style={[
-              styles.input, {
-                borderWidth: errors.email && 2,
-                borderColor: errors.email && '#ff375b' //caso tenha erros usar cor vermelha na borda 
-              }
-            ]}
-            onChangeText={onChange}
-            onBlur={onBlur} //chamado quando o texto input é tocado
-            value={value}
-            placeholder="Ex: Maria@gmail.com " />
-      </>
+          <>
+            <Text style={styles.textLabel}>*  Email: </Text>
+            <TextInput
+              style={[
+                styles.input, {
+                  borderWidth: errors.email && 2,
+                  borderColor: errors.email && '#ff375b' //caso tenha erros usar cor vermelha na borda 
+                }
+              ]}
+              onChangeText={onChange}
+              onBlur={onBlur} //chamado quando o texto input é tocado
+              value={value}
+              placeholder="Ex: Maria@gmail.com " />
+          </>
         )}
       />
       {errors.email && <Text style={styles.labelError}>{errors.email.message}</Text>}
-      
+
       <Controller
         control={control}
         name="phone"
         render={({ field: { onChange, onBlur, value } }) => (
-      <>
-        
-      <Text style={styles.textLabel}>*  Telefone para contato: </Text>
-        <TextInput
-            style={[
-              styles.input, {
-                borderWidth: errors.phone && 2,
-                borderColor: errors.phone && '#ff375b'
-              }
-            ]}
-            onChangeText={onChange}
-            onBlur={onBlur} //chamado quando o texto input é tocado
-            value={value}
-            placeholder="(99) 9 9999-9999"/>
-        </>
+          <>
+
+            <Text style={styles.textLabel}>*  Telefone para contato: </Text>
+            <TextInput
+              style={[
+                styles.input, {
+                  borderWidth: errors.phone && 2,
+                  borderColor: errors.phone && '#ff375b'
+                }
+              ]}
+              onChangeText={onChange}
+              onBlur={onBlur} //chamado quando o texto input é tocado
+              value={value}
+              placeholder="(99) 9 9999-9999" />
+          </>
         )}
       />
       {errors.phone && <Text style={styles.labelError}>{errors.phone.message}</Text>}
@@ -124,35 +124,36 @@ export default function App() {
         control={control}
         name="model"
         render={({ field: { onChange, onBlur, value } }) => (
-      <>
-        
-      <Text style={styles.textLabel}>*  Modelo ou  Marca da Bicicleta:</Text>
-        <TextInput
-            style={[
-              styles.input, {
-                borderWidth: errors.model && 2,
-                borderColor: errors.model && '#ff375b' //caso tenha erros usar cor vermelha na borda 
-              }
-            ]}
-            onChangeText={onChange}
-            onBlur={onBlur} //chamado quando o texto input é tocado
-            value={value}
-            placeholder="Ex: Aro 29 Caloi, Sense, Monark etc..." />
+          <>
+
+            <Text style={styles.textLabel}>*  Modelo ou  Marca da Bicicleta:</Text>
+            <TextInput
+              style={[
+                styles.input, {
+                  borderWidth: errors.model && 2,
+                  borderColor: errors.model && '#ff375b' //caso tenha erros usar cor vermelha na borda 
+                }
+              ]}
+              onChangeText={onChange}
+              onBlur={onBlur} //chamado quando o texto input é tocado
+              value={value}
+              placeholder="Ex: Aro 29 Caloi, Sense, Monark etc..." />
           </>
         )}
       />
-       {errors.model &&<Text style={styles.labelError}>{errors.model.message}</Text>}     
-                        
+      {errors.model && <Text style={styles.labelError}>{errors.model.message}</Text>}
+    
 
       <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignIn)}
       >
         <Text style={styles.textButton}>Finalizar</Text>
       </TouchableOpacity>
-      
-      <Footer />     
+
+      <Footer />
     </View>
 
   );
+
 }
 
 
@@ -162,6 +163,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4ebed', // Cor de fundo
     alignItems: 'center',
 
+  },
+
+  welcomeText: { // estilo do texo
+    fontSize: 18, // Tamanho da fonte
+    fontWeight: 'bold', // Peso da fonte
+    color: 'green',
+    marginTop: 10, // Margem superior
+    textAlign: 'center', // Alinhamento de texto ao centro
   },
 
   textButton: { //Texto do Botão
@@ -209,9 +218,13 @@ const styles = StyleSheet.create({
     width: 100, // Defina a largura da imagem
     height: 100, // Defina a altura da imagem
     resizeMode: 'contain',
-    borderRadius: 40, // Torna as bordas arredondadas (metade da largura/altura)
-    alignSelf: 'flex-start', // Alinha a imagem à esquerdoda tela
+    borderRadius: 60, // Torna as bordas arredondadas (metade da largura/altura)
+    alignSelf: 'flex-start',
+    marginLeft: 10,
+    marginTop: 10, // Alinha a imagem à esquerdoda tela
   },
+
+
 
 
 

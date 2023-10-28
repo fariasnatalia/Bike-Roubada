@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
+
+  
   // Para posicionar o texto do cabeçalho 
   headerText: {
     color: '#fff', // Cor do texto
