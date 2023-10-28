@@ -1,28 +1,28 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerText}>Projeto Extensionista Universidade Estácio de Sá - 2023</Text>
+      <Text style={styles.headerText}>{title}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    header: {
-    backgroundColor: '#17a469',
-    width: '100%',
-    height: 60,
+  header: {
+    width: '100%', //largura
+    backgroundColor: '#059669', // Cor de fundo do cabeçalho
+    height: 80, // Altura do cabeçalho
     alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    bottom: 0,
+    justifyContent: 'space-evenly',
   },
+  // Para posicionar o texto do cabeçalho 
   headerText: {
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: 'Arial',
+    color: '#fff', // Cor do texto
+    fontSize: 25, // Tamanho da fonte
+    fontWeight: 'bold',
+    
   },
 });
 

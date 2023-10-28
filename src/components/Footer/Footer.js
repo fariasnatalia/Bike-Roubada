@@ -25,8 +25,8 @@ const Footer  = () => {
     footerText: {
       color: '#fff', // Cor do texto footer
       fontSize: 14,
-      fontWeight: 'Arial',
-      position: 'fixed',
+      fontWeight: 'normal',
+      
     },
 
   });

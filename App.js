@@ -10,7 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
 import Footer from './src/components/Footer/Footer';
-
+import Header from './src/components/Header/Header';
 
 
 const schema = yup.object({
@@ -38,13 +38,17 @@ export default function App() {
   return (
 
     <View style={styles.container}>
+      <Header title="Bike Roubada" /> 
+      
       <Text>Olá seja Bem-Vindo(a)!</Text>
       
       <Image
         source={require('./assets/image-bike.jpeg')} //imagem
         style={styles.image}
       />
-      
+       
+          {/* Conteúdo da sua aplicação */}
+        
       <Controller
         control={control}
         name="username"
@@ -177,11 +181,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 
-  description: {
-    color: '#000',
-    marginBottom: 18, // Espaço abaixo do texto
-    textAlign: 'center',
-  },
   input: {
     width: '80%',
     height: 40,
@@ -194,18 +193,26 @@ const styles = StyleSheet.create({
 
   textLabel: { //Estilo do texto Label
     fontWeight: 'bold',
+    color: '#059669',
+    alignSelf: 'flex-start',
+    marginStart: 45, // Espaçamento à esquerda
+    marginEnd: 10,   // Espaçamento à direita 
   },
 
-  labelError: {
+  labelError: { //Estilo do texto quando ocorre erro!
     alignItems: 'center',
     color: '#ff375b',
     marginBottom: '8',
   },
 
   image: {
-    width: '500%', //largura
-    height: 50, // ALtura
+    width: 100, // Defina a largura da imagem
+    height: 100, // Defina a altura da imagem
     resizeMode: 'contain',
-  }
+    borderRadius: 40, // Torna as bordas arredondadas (metade da largura/altura)
+    alignSelf: 'flex-start', // Alinha a imagem à esquerdoda tela
+  },
+
+
 
 });

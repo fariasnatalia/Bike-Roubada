@@ -2,6 +2,12 @@ Instalando biblioteca de animações, facilita a criação de animações simple
 
 ``` npm install react-native-animatable ``` 
 
+Instalando o  Native Base no projeto
+
+``` npm install native-base ```
+
+Os snippets do NativeBase são abreviaturas para os componentes NativeBase mais utilizados. Todos os snippets começam com o prefixo nb- e são seguidos pelo nome do componente desejado. É simples assim.
+
 Instalando biblioteca de (select)
 
 ``` npm install react-native-picker-select ```
@@ -41,4 +47,5 @@ servirá apenas para cuidar do Layout da aplicação, nada mais é do que as est
 Rodando o projeto no navegador:
 
 ```npx expo start```
-
+``` npx expo ```
+``` expo start ```
