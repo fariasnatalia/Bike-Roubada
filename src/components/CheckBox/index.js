@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   unselectedText: {
-    color: 'black', // Cor do texto quando a opção não está selecionada
+    color: 'black ', // Cor do texto quando a opção não está selecionada
   },
 
 });

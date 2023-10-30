@@ -50,7 +50,7 @@ Rodando o projeto no navegador:
 ``` npx expo ```
 ``` expo start ```
 
-Caso ocorra erro ao rodar o Expo Go 
+Caso ocorra erro ao rodar o Expo Go no android
 
 Ultilize esse comando
 

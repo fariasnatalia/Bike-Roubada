@@ -161,7 +161,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: '#a1d76f',// Cor de fundo
+    backgroundColor: '#f5EDDC',// Cor de fundo
     alignItems: 'center',
 
   },
