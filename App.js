@@ -9,9 +9,10 @@ import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
+
 import Footer from './src/components/Footer/Footer';
 import Header from './src/components/Header/Header';
-
+import Checkbox from './src/components/CheckBox';
 
 const schema = yup.object({
   username: yup.string().required("Informe seu nome!"),
@@ -142,7 +143,7 @@ export default function App() {
         )}
       />
       {errors.model && <Text style={styles.labelError}>{errors.model.message}</Text>}
-    
+      <Checkbox />
 
       <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignIn)}
       >

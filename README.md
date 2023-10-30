@@ -49,3 +49,16 @@ Rodando o projeto no navegador:
 ```npx expo start```
 ``` npx expo ```
 ``` expo start ```
+
+Caso ocorra erro ao rodar o Expo Go 
+
+Ultilize esse comando
+
+``` npx expo ```
+
+
+Caso ocorra erro ao rodar o Expo na Web
+
+Ultilize esse comando
+
+``` expo expo ```
