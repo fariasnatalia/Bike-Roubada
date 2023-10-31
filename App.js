@@ -13,7 +13,7 @@ import * as yup from 'yup'
 import Footer from './src/components/Footer/Footer';
 import Header from './src/components/Header/Header';
 import Checkbox from './src/components/CheckBox';
-import LoginScreen from './src/components/Login/LoginScreen';
+// import LoginScreen from './src/components/Login/LoginScreen';
 
 
 const schema = yup.object({
@@ -40,15 +40,18 @@ export default function App() {
 
   return (
 
+    
+    
+    
     <View style={styles.container}>
       <Header title="Bike Roubada" />
-      
+
       <Text style={styles.welcomeText}>Olá seja Bem-Vindo(a)!</Text>
       <Image
         source={require('./assets/image-bike.jpeg')} //imagem
         style={styles.image} />
-        {/* <LoginScreen /> */}
-      
+      {/* <LoginScreen /> */}
+
 
       {/* Conteúdo da sua aplicação */}
 
@@ -71,9 +74,7 @@ export default function App() {
               value={value}
               placeholder="*  Nome e Sobrenome:" />
           </>
-        )}
-      // quando o erro for (true) ele vai renderizar essa mensagem!
-      />
+        )} />
       {errors.username && <Text style={styles.labelError}>{errors.username.message}</Text>}
 
       <Controller
@@ -94,8 +95,7 @@ export default function App() {
               value={value}
               placeholder="Ex: Maria@gmail.com " />
           </>
-        )}
-      />
+        )} />
       {errors.email && <Text style={styles.labelError}>{errors.email.message}</Text>}
 
       <Controller
@@ -117,8 +117,7 @@ export default function App() {
               value={value}
               placeholder="(99) 9 9999-9999" />
           </>
-        )}
-      />
+        )} />
       {errors.phone && <Text style={styles.labelError}>{errors.phone.message}</Text>}
 
       {/* Cadastro da bicicleta*/}
@@ -142,8 +141,7 @@ export default function App() {
               value={value}
               placeholder="Ex: Aro 29 Caloi, Sense, Monark etc..." />
           </>
-        )}
-      />
+        )} />
       {errors.model && <Text style={styles.labelError}>{errors.model.message}</Text>}
       <Checkbox />
 
@@ -151,10 +149,10 @@ export default function App() {
       >
         <Text style={styles.textButton}>Finalizar</Text>
       </TouchableOpacity>
-      
+
       <Footer />
     </View>
-
+  
   );
 
 }
@@ -169,7 +167,7 @@ const styles = StyleSheet.create({
   },
 
   welcomeText: { // estilo do texo de boas vinda
-    fontSize: 30, // Tamanho da fonte
+    fontSize: 20, // Tamanho da fonte
     fontWeight: 'bold', // Peso da fonte
     color: '#10b981',
     marginTop: 20, // Margem superior
@@ -191,6 +189,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
+    
   },
 
   input: {

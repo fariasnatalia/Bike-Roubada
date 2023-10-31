@@ -14,9 +14,8 @@ function Checkbox() {
 
   return (
     <>
-      <View>
-        <Text style={styles.text}  
-        >  A bicicleta foi roubada? marque a opção corresponde!</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>A bicicleta foi roubada?</Text>
       </View>
 
       <View style={styles.container}>
@@ -45,6 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row-reverse',
     alignItems: 'center',
+    marginBottom: 20,
   },
   checkbox: {
     width: 30,
@@ -64,10 +64,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-
+  textContainer: {
+    marginTop: 22, // Adicione margem superior ao contêiner do texto
+  },
   text: {
     color: 'white', // Cor do texto quando a opção está selecionada
     fontWeight: 'bold',
+    marginBottom: 22,
   },
   selectedText: {
     color: '#fff', // Cor do texto quando a opção não está selecionada
