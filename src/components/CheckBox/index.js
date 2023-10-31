@@ -20,18 +20,15 @@ function Checkbox() {
       </View>
 
       <View style={styles.container}>
-
-        <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
-          {isChecked && <Text>X</Text>}
-
-        </TouchableOpacity>
-
-        <Text>SIM</Text>
-        <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
-          {!isChecked && <Text>X</Text>}
-        </TouchableOpacity>
-        <Text>NÃO</Text>
-      </View>
+  <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
+    {isChecked && <Text style={styles.selectedText}>X</Text>}
+  </TouchableOpacity>
+  <Text style={styles.greenText}>SIM</Text>
+  <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
+    {!isChecked && <Text style={styles.selectedText}>X</Text>}
+  </TouchableOpacity>
+  <Text style={styles.greenText}>NÃO</Text>
+</View>
     </>
 
   );
@@ -41,6 +38,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 15,
     marginBottom: 30,
+  
     
   },
   
@@ -56,16 +54,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 10,
+    color: 'green',
+    
     
     
   },
-
-  text: {
-    color: '#00563B', // Cor do texto quando a opção está selecionada
+  greenText: {
+    color: '#10b981',
     fontWeight: 'bold',
   },
-  unselectedText: {
-    color: 'black ', // Cor do texto quando a opção não está selecionada
+
+
+  text: {
+    color: 'white', // Cor do texto quando a opção está selecionada
+    fontWeight: 'bold',
+  },
+  selectedText: {
+    color: '#fff', // Cor do texto quando a opção não está selecionada
   },
 
 });
