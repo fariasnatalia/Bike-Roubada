@@ -20,15 +20,17 @@ function Checkbox() {
       </View>
 
       <View style={styles.container}>
-  <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
-    {isChecked && <Text style={styles.selectedText}>X</Text>}
-  </TouchableOpacity>
-  <Text style={styles.greenText}>SIM</Text>
-  <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
-    {!isChecked && <Text style={styles.selectedText}>X</Text>}
-  </TouchableOpacity>
-  <Text style={styles.greenText}>NÃO</Text>
-</View>
+        <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
+          {isChecked && <Text style={styles.selectedText}>X</Text>}
+        </TouchableOpacity>
+      
+      <Text style={styles.greenText}>SIM</Text>
+        <TouchableOpacity style={styles.checkbox} onPress={handleToggle}>
+          {!isChecked && <Text style={styles.selectedText}>X</Text>}
+        </TouchableOpacity>
+      <Text style={styles.greenText}>NÃO</Text>
+      
+      </View>
     </>
 
   );
@@ -38,8 +40,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 15,
     marginBottom: 30,
-  
-    
   },
   
   container: {

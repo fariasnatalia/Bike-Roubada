@@ -13,6 +13,8 @@ import * as yup from 'yup'
 import Footer from './src/components/Footer/Footer';
 import Header from './src/components/Header/Header';
 import Checkbox from './src/components/CheckBox';
+import LoginScreen from './src/components/Login/LoginScreen';
+
 
 const schema = yup.object({
   username: yup.string().required("Informe seu nome!"),
@@ -40,13 +42,13 @@ export default function App() {
 
     <View style={styles.container}>
       <Header title="Bike Roubada" />
-
-    
+      
       <Text style={styles.welcomeText}>Olá seja Bem-Vindo(a)!</Text>
-
       <Image
         source={require('./assets/image-bike.jpeg')} //imagem
         style={styles.image} />
+        {/* <LoginScreen /> */}
+      
 
       {/* Conteúdo da sua aplicação */}
 
@@ -149,7 +151,7 @@ export default function App() {
       >
         <Text style={styles.textButton}>Finalizar</Text>
       </TouchableOpacity>
-
+      
       <Footer />
     </View>
 
@@ -161,16 +163,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: '#f5EDDC',// Cor de fundo
+    backgroundColor: '#2C3333',// Cor de fundo
     alignItems: 'center',
 
   },
 
-  welcomeText: { // estilo do texo
-    fontSize: 18, // Tamanho da fonte
+  welcomeText: { // estilo do texo de boas vinda
+    fontSize: 30, // Tamanho da fonte
     fontWeight: 'bold', // Peso da fonte
-    color: 'green',
-    marginTop: 10, // Margem superior
+    color: '#10b981',
+    marginTop: 20, // Margem superior
     textAlign: 'center', // Alinhamento de texto ao centro
   },
 
@@ -182,7 +184,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  button: { //Botão
+  button: { //Botão de castro
     backgroundColor: '#10b981', // Cor do botão
     width: '50%', //largura
     height: 40, //altura
@@ -203,7 +205,7 @@ const styles = StyleSheet.create({
 
   textLabel: { //Estilo do texto Label
     fontWeight: 'bold',
-    color: '#059669',
+    color: '#fff',
     alignSelf: 'flex-start',
     marginStart: 45, // Espaçamento à esquerda
     marginEnd: 10,   // Espaçamento à direita 
